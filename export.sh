@@ -7,3 +7,4 @@ export LD_LIBRARY_PATH="/root/gmocanu/xen-4.8/xen/tools/libs/ctrl:$LD_LIBRARY_PA
 export LD_LIBRARY_PATH="/root/gmocanu/xen-4.8/xen/tools/libs/toollog:$LD_LIBRARY_PATH"                                                                                                       
 export LD_LIBRARY_PATH="/root/gmocanu/xen-4.8/xen/tools/libs/util:$LD_LIBRARY_PATH"                                                                                                          
 export LD_LIBRARY_PATH="/root/gmocanu/xen-4.8/xen/dist/install/usr/local/lib:$LD_LIBRARY_PATH"
+export LC_ALL=en_US.UTF-8
