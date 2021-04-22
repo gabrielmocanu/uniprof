@@ -50,26 +50,25 @@ function run
 	echo ""
 
 	echo "Running uniprof..."
-	nohup "$path_to_uniprof$uniprof" -F $frequency -T $time - $dom_id > "$domain-stacktrace" > /dev/null 2>&1
+	nohup "$path_to_uniprof$uniprof" -F $frequency -T $time - $dom_id > "$domain-stacktrace" 2> /dev/null
 	echo ""
 
 	echo "Running nm to find symbols..."
-	nohup nm -n $path_exec > "$domain.syms" > /dev/null 2>&1 
+	nohup nm -n $path_exec > "$domain.syms" 2> /dev/null
 	echo ""
 
 	echo "Running symbolize to map addresses..."
-	nohup "$path_to_uniprof$symbolize" "$domain.syms" "$domain-stacktrace" > "$domain-stacktrace.syms" > /dev/nul 2>&1
+	nohup "$path_to_uniprof$symbolize" "$domain.syms" "$domain-stacktrace" > "$domain-stacktrace.syms" 2> /dev/null
 	echo ""
 
 	echo "Running stack collapse to format stack trace for Flame Graph..."
-	nohup "$path_to_flamegraph$stackcollapse" "$domain-stacktrace.syms" > "$domain-stackcollapse" > /dev/null 2>&1 
+	nohup "$path_to_flamegraph$stackcollapse" "$domain-stacktrace.syms" > "$domain-stackcollapse" 2> /dev/null
 	echo ""
 
 	echo "Running Flame Graph..."
-	nohup "$path_to_flamegraph$flamegraph" "$domain-stacktrace.syms" > "$domain-flamegraph.svg" > /dev/null 2>&1
+	nohup "$path_to_flamegraph$flamegraph" "$domain-stackcollapse" > "$domain-flamegraph.svg" 2> /dev/null
 	echo ""
 }
-
 # Function to warn an invalid option
 function invalid
 {
