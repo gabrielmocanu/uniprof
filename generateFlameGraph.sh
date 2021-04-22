@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Load $PATH and $LD_LIBRARY_PATH
-source load.sh
+source export.sh
 
 # Change these variables to point to Uniprof and FlameGraph directories
 path_to_uniprof='/root/gmocanu/uniprof/'
