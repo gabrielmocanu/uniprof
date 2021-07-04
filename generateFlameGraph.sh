@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 # Load $PATH and $LD_LIBRARY_PATH
 source export.sh
 
 # Change these variables to point to Uniprof and FlameGraph directories
-path_to_uniprof='/root/gmocanu/uniprof/'
-path_to_flamegraph='/root/gmocanu/FlameGraph/'
+path_to_uniprof='./'
+path_to_flamegraph='../FlameGraph/'
 
 # Global variables
 script_name=$0
